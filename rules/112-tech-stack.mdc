@@ -1,6 +1,87 @@
 ---
-description: 
-globs: 
-alwaysApply: false
+description: ENFORCE consistent use of the preferred technology stack across all projects
+globs: **/*.{ts,tsx,js,jsx,json}
+alwaysApply: true
 ---
- 
+
+## Technology Stack
+
+### Core Framework
+- Next.js with App Router support
+
+### Language & Type Safety
+- TypeScript with strict mode
+- Zod for validation
+- T3 Env for type-safe environment variables
+
+### UI & Styling
+- Tailwind CSS
+- Shadcn UI
+- Radix UI
+
+### Authentication
+- Clerk: Sign up, Sign in, Sign out, Forgot password, Reset password
+- Passwordless Authentication with Magic Links
+- Multi-Factor Auth (MFA)
+- Social Auth (Google, Facebook, Twitter, GitHub, Apple)
+- Passwordless login with Passkeys
+- User Impersonation
+
+### Database & ORM
+- DrizzleORM (PostgreSQL, SQLite, MySQL)
+- PGlite for offline/local development
+- Drizzle Studio and CLI migration tools
+
+### Form Handling
+- React Hook Form
+
+### State Management
+- nuqs for URL search parameter state management
+
+### Internationalization
+- next-intl
+- Crowdin
+
+### Testing
+- Vitest and React Testing Library for unit testing
+- Playwright for integration and E2E testing
+- Percy for visual testing (optional)
+
+### Code Quality
+- ESLint (Next.js, Core Web Vitals, Tailwind CSS, Antfu configuration)
+- Prettier for code formatting
+- Husky for Git Hooks
+- Lint-staged for running linters on Git staged files
+- Commitlint for linting git commits
+- Commitizen for standard compliant commit messages
+- Codecov for code coverage
+
+### Monitoring & Logging
+- Sentry for error monitoring
+- Pino.js for logging
+- Better Stack for log management
+- Checkly for monitoring as code
+
+### Security
+- Arcjet for security and bot protection
+
+### CI/CD & Release
+- GitHub Actions for running tests on pull requests
+- Semantic Release for automatic changelog generation
+
+### Documentation & Development
+- Storybook for UI development
+- Bundler Analyzer
+
+### Performance
+- Optimized for lighthouse score (HTML & CSS minification, cache busting)
+- Optimized Web Vitals (LCP, CLS, FID)
+
+## Critical Notes
+<critical>
+- Use React Server Components (RSC) by default, minimize 'use client'
+- Follow a mobile-first responsive design approach
+- Prioritize developer experience and performance
+- Keep dependencies updated monthly
+- Remove unused dependencies and features
+</critical> 

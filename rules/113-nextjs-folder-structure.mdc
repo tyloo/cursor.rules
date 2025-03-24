@@ -1,6 +1,163 @@
 ---
-description: 
-globs: 
-alwaysApply: false
+description: ENFORCE consistent Next.js folder structure to maintain project organization and code clarity
+globs: **/{tsconfig.json,package.json,app/**,components/**,lib/**,config/**,db/**}
+alwaysApply: true
 ---
+
+## Next.js Project Structure
+
+### Root Level Folders
+
+- `/app` - Core application routing and pages using Next.js App Router
+  - `/(auth)` - Authentication routes and layouts (protected by Clerk)
+  - `/(marketing)` - Public-facing pages (landing, pricing, etc.)
+  - `/api` - API routes with route handlers
+  - `/[locale]` - Internationalization routes when using next-intl
+  - `layout.tsx` - Root layout with providers
+  - `error.tsx` - Global error boundary
+
+- `/components` - Reusable UI components
+  - `/ui` - Primitive UI components (shadcn/ui)
+  - `/forms` - Form components with React Hook Form
+  - `/auth` - Authentication-related components
+  - `/layout` - Layout components (headers, footers, navigation)
+  - `/marketing` - Components for public-facing pages
+  - `/dashboard` - Components for authenticated dashboard
+
+- `/config` - Application configuration
+  - `site.ts` - Site metadata, links, navigation
+  - `dashboard.ts` - Dashboard routes, sidebar items
+  - `auth.ts` - Authentication configuration
+  - `subscriptions.ts` - Pricing and subscription plans
+
+- `/lib` - Shared utility functions and code
+  - `/actions` - Server actions (form handlers, data mutations)
+  - `/api` - API client libraries
+  - `/utils` - Utility functions
+  - `/hooks` - Custom React hooks
+  - `/validations` - Zod schemas for validation
+
+- `/db` - Database related code
+  - `/schema` - DrizzleORM schema definitions
+  - `/migrations` - Database migrations
+  - `/queries` - Reusable database queries
+  - `/seed` - Seed data for development
+
+- `/public` - Static assets
+  - `/images` - Image files
+  - `/fonts` - Custom font files
+  - `/icons` - Icon files
+
+- `/styles` - Global styles and Tailwind configuration
+  - `globals.css` - Global CSS including Tailwind imports
+
+- `/types` - TypeScript type definitions
+  - `index.d.ts` - Common type definitions
+  - `next-auth.d.ts` - Authentication type extensions
+  - `api.d.ts` - API-related type definitions
+
+- `/emails` - Email templates (React Email)
+  - `/components` - Email-specific components
+  - `/templates` - Complete email templates
+
+- `/i18n` - Internationalization assets
+  - `/locales` - Translation files
+  - `/config.ts` - i18n configuration
+
+- `/tests` - Test files
+  - `/unit` - Unit tests with Vitest
+  - `/integration` - Integration tests
+  - `/e2e` - End-to-end tests with Playwright
+  - `/fixtures` - Test data
+
+- `/scripts` - Utility scripts for development, deployment, etc.
+
+### Root Level Files
+
+- `next.config.js` - Next.js configuration
+- `tailwind.config.ts` - Tailwind CSS configuration
+- `drizzle.config.ts` - DrizzleORM configuration
+- `env.mjs` - Type-safe environment variables with T3 Env
+- `tsconfig.json` - TypeScript configuration
+- `package.json` - Project dependencies and scripts
+- `middleware.ts` - Next.js middleware (authentication, i18n)
+- `.env.example` - Example environment variables
+- `.eslintrc.js` - ESLint configuration
+- `.prettierrc.js` - Prettier configuration
+
+## Patterns and Conventions
+
+### Route Organization
+
+- Group routes by domain (auth, marketing, dashboard)
+- Use route groups with parentheses for logical separation
+- Place route-specific components within the route folder
+
+### Component Organization
+
+- Organize components by feature and purpose
+- Create index.ts files to export components from directories
+- Keep component-specific styles, tests, and types together
+
+### Data Access Layer
+
+- Separate database schema from query logic
+- Use server actions for data mutations
+- Keep API endpoints RESTful and well-documented
+
+## Critical Notes
+
+<critical>
+- NEVER mix client and server code without proper boundaries
+- ALWAYS use route groups to organize related routes
+- ENSURE proper data fetching patterns using React Server Components
+- KEEP components small, focused, and reusable
+- FOLLOW naming conventions for files and folders as specified in naming-conventions.mdc
+- USE appropriate directory for feature-specific code rather than creating new root directories
+</critical>
+
+## Examples
+
+<example>
+// Good structure
+app/
+  (auth)/
+    sign-in/page.tsx
+    sign-up/page.tsx
+  (marketing)/
+    page.tsx
+    pricing/page.tsx
+  api/
+    webhook/route.ts
+  dashboard/
+    [id]/page.tsx
+    layout.tsx
+components/
+  ui/
+    button.tsx
+  forms/
+    sign-in-form.tsx
+lib/
+  actions/
+    create-project.ts
+  utils/
+    date-formatter.ts
+</example>
+
+<example type="invalid">
+// Bad structure
+src/
+  pages/
+    _app.tsx
+    index.tsx
+  components/
+    Button.jsx
+    misc/
+      random-stuff.tsx
+  utils.ts
+  constants/
+    random-constants.js
+  api/
+    apiClient.js
+</example>
  
