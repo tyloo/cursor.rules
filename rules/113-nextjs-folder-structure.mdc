@@ -38,7 +38,7 @@ alwaysApply: true
   - `/validations` - Zod schemas for validation
 
 - `/db` - Database related code
-  - `/schema` - DrizzleORM schema definitions
+  - `schema.ts` - DrizzleORM schema definitions
   - `/migrations` - Database migrations
   - `/queries` - Reusable database queries
   - `/seed` - Seed data for development
@@ -48,12 +48,12 @@ alwaysApply: true
   - `/fonts` - Custom font files
   - `/icons` - Icon files
 
-- `/styles` - Global styles and Tailwind configuration
-  - `globals.css` - Global CSS including Tailwind imports
+- `/styles` - Global styles and Tailwind v4 configuration
+  - `globals.css` - Global CSS including Tailwind v4 imports
 
 - `/types` - TypeScript type definitions
   - `index.d.ts` - Common type definitions
-  - `next-auth.d.ts` - Authentication type extensions
+  - `better-auth.d.ts` - Authentication type extensions
   - `api.d.ts` - API-related type definitions
 
 - `/emails` - Email templates (React Email)
@@ -75,7 +75,6 @@ alwaysApply: true
 ### Root Level Files
 
 - `next.config.js` - Next.js configuration
-- `tailwind.config.ts` - Tailwind CSS configuration
 - `drizzle.config.ts` - DrizzleORM configuration
 - `env.mjs` - Type-safe environment variables with T3 Env
 - `tsconfig.json` - TypeScript configuration

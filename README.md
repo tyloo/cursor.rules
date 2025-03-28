@@ -28,7 +28,7 @@ This collection of rules provides clear, actionable guidelines for developers to
 - TypeScript
 - React 19
 - Next.js 13+
-- Tailwind CSS
+- Tailwind CSS V4
 - Shadcn UI
 - Drizzle ORM
 
@@ -55,7 +55,7 @@ This collection of rules provides clear, actionable guidelines for developers to
 ### UI and Styling
 
 - **108-shadcn-ui.mdc**: Shadcn UI implementation guidelines
-- **111-tailwind-styles.mdc**: Tailwind CSS usage standards
+- **111-tailwind-styles.mdc**: Tailwind CSS v4 usage standards
 
 ### Database
 

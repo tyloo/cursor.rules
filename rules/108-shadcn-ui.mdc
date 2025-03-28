@@ -10,5 +10,5 @@ alwaysApply: false
 ## Rules
 
 - You must use Shadcn UI for components.
-- You must use Tailwind CSS for styling.
+- You must use Tailwind CSS v4 for styling.
 - You must install any ShadcnUI missing component with `pnpm dlx shadcn@canary add <component-name />`

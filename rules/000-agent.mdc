@@ -20,8 +20,8 @@ globs:
 
 ## ui-and-styling
 
-- Use Shadcn UI, Radix, and Tailwind for components and styling.
-- Implement responsive design with Tailwind CSS using a mobile-first approach.
+- Use Shadcn UI, Radix, and Tailwind v4 for components and styling.
+- Implement responsive design with Tailwind CSS v4 using a mobile-first approach.
 
 ## performance-optimization
 

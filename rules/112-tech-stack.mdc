@@ -15,7 +15,7 @@ alwaysApply: true
 - T3 Env for type-safe environment variables
 
 ### UI & Styling
-- Tailwind CSS
+- Tailwind CSS v4
 - Shadcn UI
 - Radix UI
 
@@ -34,6 +34,7 @@ alwaysApply: true
 
 ### Form Handling
 - React Hook Form
+- Zod for form validation
 
 ### State Management
 - nuqs for URL search parameter state management
@@ -48,7 +49,7 @@ alwaysApply: true
 - Percy for visual testing (optional)
 
 ### Code Quality
-- ESLint (Next.js, Core Web Vitals, Tailwind CSS, Antfu configuration)
+- ESLint (Next.js, Core Web Vitals, Tailwind CSS v4, Antfu configuration)
 - Prettier for code formatting
 - Husky for Git Hooks
 - Lint-staged for running linters on Git staged files
